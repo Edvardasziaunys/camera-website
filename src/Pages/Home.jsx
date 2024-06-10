@@ -1,7 +1,8 @@
 import "./Home.css";
+import HeroSection from "../Components/HeroSection.jsx";
 
 function Home() {
-  return <div>Home</div>;
+  return <HeroSection />;
 }
 
 export default Home;
