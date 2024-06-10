@@ -1,0 +1,38 @@
+.navigation-menu p {
+  word-spacing: 10px;
+  text-decoration: none;
+  color: rgb(227, 227, 227);
+  padding: 5px;
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+}
+.navigation-wrapper {
+  text-align: center;
+  word-spacing: 20px;
+  height: 80px;
+  background-color: #171717;
+  align-content: center;
+  border-bottom: solid rgba(0, 0, 0, 0.081) 1px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.navigation-menu img {
+  object-fit: contain;
+  width: 80px;
+}
+
+.navigation-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navigation-menu div {
+  display: flex;
+  justify-content: space-around;
+}
