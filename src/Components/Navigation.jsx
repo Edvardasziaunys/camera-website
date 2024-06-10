@@ -5,12 +5,14 @@ function Navbar() {
   return (
     <div className="navigation-wrapper">
       <nav className="navigation-menu">
-        <img src="./Photostudiologo.png"></img>
+        <Link to="/home">
+          <img src="./Photostudiologo.png" to="/Home"></img>
+        </Link>
         <div>
-          <Link to="/camera-diretory">
+          <Link to="/my-cameras">
             <p>Cameras</p>
           </Link>
-          <Link to="/gallery">
+          <Link to="/my-gallery">
             <p>Gallery</p>
           </Link>
         </div>
