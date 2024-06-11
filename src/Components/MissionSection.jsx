@@ -14,7 +14,7 @@ function MissionSection() {
           gallerys and gear, which might give them some idea about the specific
           camera from another persons view.
         </p>
-        <img src="./sonymission2.png"></img>
+        <img src="./sonymission2.png" alt="mission-image"></img>
       </div>
     </div>
   );
