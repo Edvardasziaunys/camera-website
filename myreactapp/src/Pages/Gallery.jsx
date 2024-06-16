@@ -1,7 +1,12 @@
 import "./Gallery.css";
+import GalleryHero from "../Components/GalleryHero.jsx";
 
 function MyGallery() {
-  return <div>Gallery</div>;
+  return (
+    <div>
+      <GalleryHero />
+    </div>
+  );
 }
 
 export default MyGallery;

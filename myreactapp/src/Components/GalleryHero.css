@@ -1,0 +1,30 @@
+.gallery-hero-section {
+  text-align: center;
+}
+
+.hero-section-text {
+  background-image: url("https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=1544&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  margin: 0;
+  height: 300px;
+  background-size: cover;
+  text-align: center;
+  color: rgb(245, 245, 245);
+  box-shadow: inset 0 0 0 2000px rgba(36, 36, 36, 0.646);
+}
+
+.hero-section-text h1 {
+  margin: 0;
+  padding-top: 80px;
+}
+.gallery-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding-top: 50px;
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 50px;
+  height: auto;
+}
