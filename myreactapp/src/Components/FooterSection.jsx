@@ -1,5 +1,3 @@
-import "./FooterSection.css";
-
 function FooterSection() {
   return (
     <div className="footer-wrapper">

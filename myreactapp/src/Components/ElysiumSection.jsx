@@ -12,8 +12,9 @@ function ElysiumSection() {
           <p>
             If you would like to schedule a Demo with us, where we would explain
             the platform and it's functions, you can contact us at
-            <b> demo@elysium.com</b>, or see the other tabs for explanations
-            about the respectful functions.
+            <b> demo@elysium.com</b>, fill in the form in the bottom of the
+            page, or see the other tabs for explanations about the respectful
+            functions.
           </p>
         );
       case "tab2":
