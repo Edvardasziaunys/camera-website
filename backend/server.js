@@ -183,3 +183,14 @@ app.delete("/gallery/:id", (req, res) => {
 
   res.status(200).json(deletedGalleryItem[0]);
 });
+
+app.get("/cameras/filter", (req, res) => {
+  const { make } = req.query;
+  if (!make) {
+    return res.status(400).json({ error: "Make is required" });
+  }
+  const filteredData = data.filter(
+    (camera) => camera.make.toLowerCase() === make.toLowerCase()
+  );
+  res.status(200).json(filteredData);
+});

@@ -6,7 +6,7 @@ function Navbar() {
     <div className="navigation-wrapper">
       <nav className="navigation-menu">
         <Link to="/home">
-          <img src="./Photostudiologo.png" to="/Home"></img>
+          <img src="./logocrop.png" to="/Home"></img>
         </Link>
         <div>
           <Link to="/my-cameras">

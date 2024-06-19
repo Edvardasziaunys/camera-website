@@ -33,3 +33,20 @@
   background-color: rgb(27, 27, 27);
   color: rgb(223, 223, 223);
 }
+
+.filter-add {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  padding-top: 40px;
+}
+.filter-add .add-button-container {
+  padding: 0;
+}
+.filter-add .add-button-container button {
+  align-items: center;
+}

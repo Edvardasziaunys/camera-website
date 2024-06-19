@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./CamerasHero.css";
 import ViewMoreModal from "./ViewMoreModal";
 import AddGearModal from "./AddGearModal";
+import FilterDropdown from "./FilterDropdown";
 
 function CamerasHero() {
   const [camerasData, setCamerasData] = useState([]);
@@ -15,13 +16,26 @@ function CamerasHero() {
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const [isViewMoreModalOpen, setIsViewMoreModalOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
+  const [filterMake, setFilterMake] = useState("");
 
   useEffect(() => {
+    fetchCameras();
+  }, []);
+
+  const fetchCameras = () => {
     fetch("http://localhost:8080/cameras")
       .then((response) => response.json())
       .then((data) => setCamerasData(data))
       .catch((error) => console.error("Error fetching camera data:", error));
-  }, []);
+  };
+
+  const fetchFilteredCameras = (make) => {
+    let url = `http://localhost:8080/cameras/filter?make=${make}`;
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => setCamerasData(data))
+      .catch((error) => console.error("Error fetching camera data:", error));
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -67,6 +81,16 @@ function CamerasHero() {
     setIsViewMoreModalOpen(true);
   };
 
+  const handleFilterChange = (e) => {
+    const selectedMake = e.target.value;
+    setFilterMake(selectedMake);
+    if (selectedMake === "") {
+      fetchCameras();
+    } else {
+      fetchFilteredCameras(selectedMake);
+    }
+  };
+
   return (
     <div className="camera-hero-wrapper">
       <div className="cameras-hero-section-text">
@@ -78,8 +102,14 @@ function CamerasHero() {
           <b>Your personal portfolio</b>
         </p>
       </div>
-      <div className="add-button-container">
-        <button onClick={() => setIsAddModalOpen(true)}>Add Gear</button>
+      <div className="filter-add">
+        <FilterDropdown
+          filterMake={filterMake}
+          handleFilterChange={handleFilterChange}
+        />
+        <div className="add-button-container">
+          <button onClick={() => setIsAddModalOpen(true)}>Add Gear</button>
+        </div>
       </div>
       <AddGearModal
         isOpen={isAddModalOpen}
