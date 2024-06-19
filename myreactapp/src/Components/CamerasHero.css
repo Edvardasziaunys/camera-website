@@ -25,3 +25,11 @@
   margin: 0;
   padding-top: 80px;
 }
+
+.gallery-cards button {
+  margin-bottom: 15px;
+}
+.gallery-cards button:hover {
+  background-color: rgb(27, 27, 27);
+  color: rgb(223, 223, 223);
+}

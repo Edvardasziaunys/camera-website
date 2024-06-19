@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./CamerasHero.css";
+import ViewMoreModal from "./ViewMoreModal";
+import AddGearModal from "./AddGearModal";
 
 function CamerasHero() {
   const [camerasData, setCamerasData] = useState([]);
@@ -10,7 +12,9 @@ function CamerasHero() {
     model: "",
     spec: "",
   });
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isAddModalOpen, setIsAddModalOpen] = useState(false);
+  const [isViewMoreModalOpen, setIsViewMoreModalOpen] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
 
   useEffect(() => {
     fetch("http://localhost:8080/cameras")
@@ -53,9 +57,14 @@ function CamerasHero() {
           model: "",
           spec: "",
         });
-        setIsModalOpen(false);
+        setIsAddModalOpen(false);
       })
       .catch((error) => console.error("Error adding gallery item:", error));
+  };
+
+  const handleViewMore = (item) => {
+    setSelectedItem(item);
+    setIsViewMoreModalOpen(true);
   };
 
   return (
@@ -70,52 +79,21 @@ function CamerasHero() {
         </p>
       </div>
       <div className="add-button-container">
-        <button onClick={() => setIsModalOpen(true)}>Add Gear</button>
+        <button onClick={() => setIsAddModalOpen(true)}>Add Gear</button>
       </div>
-      <div className={`modal ${isModalOpen ? "show" : ""}`}>
-        <div className="modal-content">
-          <span className="close" onClick={() => setIsModalOpen(false)}>
-            &times;
-          </span>
-          <h2>Add New Gear</h2>
-          <input
-            type="text"
-            name="image"
-            placeholder="Image URL"
-            value={newItem.image}
-            onChange={handleChange}
-          />
-          <input
-            type="text"
-            name="make"
-            placeholder="Make"
-            value={newItem.make}
-            onChange={handleChange}
-          />
-          <input
-            type="text"
-            name="model"
-            placeholder="Model"
-            value={newItem.model}
-            onChange={handleChange}
-          />
-          <input
-            type="text"
-            name="spec"
-            placeholder="Specification"
-            value={newItem.spec}
-            onChange={handleChange}
-          />
-          <input
-            type="text"
-            name="description"
-            placeholder="Description"
-            value={newItem.description}
-            onChange={handleChange}
-          />
-          <button onClick={handleAdd}>Submit</button>
-        </div>
-      </div>
+      <AddGearModal
+        isOpen={isAddModalOpen}
+        onClose={() => setIsAddModalOpen(false)}
+        newItem={newItem}
+        handleChange={handleChange}
+        handleAdd={handleAdd}
+      />
+
+      <ViewMoreModal
+        isOpen={isViewMoreModalOpen}
+        onClose={() => setIsViewMoreModalOpen(false)}
+        item={selectedItem}
+      />
       <div className="gallery-cards">
         {camerasData.map((item) => (
           <div key={item.id} className="gallery-card">
@@ -133,10 +111,8 @@ function CamerasHero() {
               <b>Specs: </b>
               {item.spec}
             </p>
-            <p className="camera-description">
-              <b>Description: </b>
-              {item.description}
-            </p>
+
+            <button onClick={() => handleViewMore(item)}>View More</button>
           </div>
         ))}
       </div>
