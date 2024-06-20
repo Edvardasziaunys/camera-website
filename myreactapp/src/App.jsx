@@ -4,6 +4,8 @@ import Navbar from "./Components/Navigation.jsx";
 import Home from "./Pages/Home.jsx";
 import MyCameras from "./Pages/Cameras.jsx";
 import MyGallery from "./Pages/Gallery.jsx";
+import AboutUs from "./Pages/AboutUs.jsx";
+
 import FooterSection from "./Components/FooterSection.jsx";
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
             <Route path="/home" element={<Home />} />
             <Route path="/my-cameras" element={<MyCameras />} />
             <Route path="/my-gallery" element={<MyGallery />} />
+            <Route path="/about-us" element={<AboutUs />} />
+
             {/* <Route path="*" element={<ErrorPage />} /> */}
           </Routes>
         </main>

@@ -1,5 +1,4 @@
 .navigation-menu p {
-  word-spacing: 10px;
   text-decoration: none;
   color: rgb(244, 244, 244);
   padding: 5px;
@@ -15,8 +14,12 @@ a {
   text-decoration: none;
 }
 .navigation-wrapper {
+  position: fixed; /* Make the navigation fixed */
+  top: 0; /* Stick it to the top of the viewport */
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Ensure it's above other content */
   text-align: center;
-  word-spacing: 20px;
   height: 80px;
   background-color: #171717;
   align-content: center;
@@ -39,7 +42,82 @@ a {
   align-items: center;
 }
 
-.navigation-menu div {
+.nav-links {
+  display: none;
+  flex-direction: column;
+  background-color: #171717;
+  position: absolute;
+  top: 80px;
+  right: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.nav-links.open {
   display: flex;
-  justify-content: space-around;
+}
+
+.burger-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20px;
+  cursor: pointer;
+}
+
+.burger-menu .line {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.burger-menu .line.open:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger-menu .line.open:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-menu .line.open:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -7px);
+}
+.nav-links p {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.355);
+  margin: 0;
+  padding: 10px;
+}
+.nav-links .about {
+  word-spacing: 2px;
+  border-bottom: none;
+}
+
+@media (min-width: 800px) {
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: static;
+    width: auto;
+    background-color: transparent;
+  }
+
+  .burger-menu {
+    display: none;
+  }
+
+  .navigation-wrapper {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
+  .nav-links p {
+    border: none;
+  }
+
+  .navigation-menu p {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
