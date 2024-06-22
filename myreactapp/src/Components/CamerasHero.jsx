@@ -3,6 +3,8 @@ import "./CamerasHero.css";
 import ViewMoreModal from "./ViewMoreModal";
 import AddGearModal from "./AddGearModal";
 import FilterDropdown from "./FilterDropdown";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 function CamerasHero() {
   const [camerasData, setCamerasData] = useState([]);
@@ -91,6 +93,20 @@ function CamerasHero() {
     }
   };
 
+  const handleDelete = (id) => {
+    fetch(`http://localhost:8080/cameras/${id}`, {
+      method: "DELETE",
+    })
+      .then((response) => {
+        if (response.ok) {
+          setCamerasData(camerasData.filter((camera) => camera.id !== id));
+        } else {
+          console.error("Error deleting camera");
+        }
+      })
+      .catch((error) => console.error("Error deleting camera:", error));
+  };
+
   return (
     <div className="camera-hero-wrapper">
       <div className="cameras-hero-section-text">
@@ -141,8 +157,15 @@ function CamerasHero() {
               <b>Specs: </b>
               {item.spec}
             </p>
-
-            <button onClick={() => handleViewMore(item)}>View More</button>
+            <div className="button-group">
+              <button onClick={() => handleViewMore(item)}>View More</button>
+              <button
+                onClick={() => handleDelete(item.id)}
+                className="delete-button"
+              >
+                <FontAwesomeIcon icon={faTrash} />
+              </button>
+            </div>
           </div>
         ))}
       </div>

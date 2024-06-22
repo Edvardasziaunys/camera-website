@@ -50,3 +50,28 @@
 .filter-add .add-button-container button {
   align-items: center;
 }
+
+.button-group .delete-button {
+  margin: 5px;
+  width: 10%;
+}
+
+.delete-button {
+  background-color: rgba(128, 128, 128, 0);
+  border: none;
+  color: rgb(44, 44, 44);
+  cursor: pointer;
+  padding: 0;
+}
+
+.button-group .delete-button:hover {
+  color: rgb(255, 0, 0);
+  background-color: rgba(128, 128, 128, 0);
+}
+
+@media (min-width: 800px) {
+  .filter-add {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}

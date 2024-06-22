@@ -40,3 +40,9 @@
   font-size: 16px;
   color: #333;
 }
+
+@media (min-width: 800px) {
+  .home-gallery-wrapper {
+    padding-bottom: 50px;
+  }
+}

@@ -8,6 +8,10 @@
   padding-right: 15px;
   gap: 20px;
 }
+.about-heading {
+  text-align: center;
+  padding-bottom: 20px;
+}
 .about-card {
   display: flex;
   flex-direction: column;
@@ -22,6 +26,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
   padding-bottom: 10px;
+  cursor: pointer;
 }
 
 .about-card:hover {

@@ -43,3 +43,14 @@
 .elysium-box p {
   font-size: 16px;
 }
+
+@media (min-width: 800px) {
+  .elysium-wrapper {
+    padding-left: 200px;
+    padding-right: 200px;
+  }
+  .elysium-wrapper img {
+    width: 50%;
+    height: 100%;
+  }
+}

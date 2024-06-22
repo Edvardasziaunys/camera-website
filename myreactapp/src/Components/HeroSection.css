@@ -5,8 +5,22 @@
   height: 500px;
   text-align: center;
   color: rgb(245, 245, 245);
-  box-shadow: inset 0 0 0 2000px rgba(36, 36, 36, 0.505);
+  box-shadow: inset 0 0 0 2000px rgba(36, 36, 36, 0.649);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+}
+
+@media (min-width: 800px) {
+  .hero-wrapper {
+    padding-left: 150px;
+    padding-right: 150px;
+    background-image: url("https://images.unsplash.com/photo-1513262835084-435d2431a5ba?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .hero-wrapper h1 {
+    font-size: 45px;
+  }
 }

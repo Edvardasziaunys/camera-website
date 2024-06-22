@@ -1,5 +1,4 @@
 .contact-us-wrapper {
-  /* max-width: 600px; */
   margin: 0 auto;
   padding: 20px;
   background-color: #171717;
@@ -46,4 +45,11 @@
 
 .contact-us-wrapper button:hover {
   background-color: #d4af37;
+}
+
+@media (min-width: 800px) {
+  .contact-us-wrapper {
+    padding-left: 200px;
+    padding-right: 200px;
+  }
 }

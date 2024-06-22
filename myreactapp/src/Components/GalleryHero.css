@@ -85,3 +85,11 @@
   border: 1px solid #ccc;
   border-radius: 5px;
 }
+
+@media (min-width: 800px) {
+  .gallery-hero-wrapper .add-button-container {
+    justify-content: right;
+    padding-left: 150px;
+    padding-right: 150px;
+  }
+}

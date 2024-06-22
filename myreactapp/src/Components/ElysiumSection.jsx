@@ -71,8 +71,8 @@ function ElysiumSection() {
             Gallery
           </button>
         </div>
-        {renderContent()}
       </div>
+      {renderContent()}
     </div>
   );
 }

@@ -7,7 +7,7 @@ function AboutUsHero() {
         <h1>JOIN ELYSIUM.</h1>
       </div>
       <div className="about-us-description">
-        <h2>Bringing the necessary tool for you freelancer journey.</h2>
+        <h2>Bringing the necessary tool for your freelancer journey.</h2>
         <p>
           For 5 years we had a vision, to create a platform where all the
           freelancers could join and keep inventory of their gear, whle at the
