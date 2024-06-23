@@ -22,8 +22,6 @@ function App() {
             <Route path="/my-cameras" element={<MyCameras />} />
             <Route path="/my-gallery" element={<MyGallery />} />
             <Route path="/about-us" element={<AboutUs />} />
-
-            {/* <Route path="*" element={<ErrorPage />} /> */}
           </Routes>
         </main>
         <footer>
